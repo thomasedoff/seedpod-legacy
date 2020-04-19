@@ -1,5 +1,5 @@
 # seedpod
-seedpod "Dockerizes" rTorrent, ruTorrent, autodl-irssi and autodl-rutorrent to provide the typical functionality of a seedbox.
+[seedpod](https://github.com/thomasedoff/seedpod) "Dockerizes" rTorrent, ruTorrent, Irssi, autodl-irssi and autodl-rutorrent to provide the typical functionality of a seedbox.
 
 ## Introduction
 I needed a "seedbox-like" setup for a private project but as the setup grew I decided to migrate everyting to it's own repository and make it public. My ambition is to keep it as minimal and functional as possible.
@@ -44,9 +44,9 @@ A pseudo-random password will be generated and output to the terminal. Use it to
 For example: **https://localhost:8000/rutorrent/**
 
 ## Configuration
-By default, Nginx/ruTorrent binds to **TCP/8000** and rtorrent to **TCP/50000** within the container. All other settings - with a few exceptions (see below) - should be according to default templates and project recommendations.
+By default, Nginx/ruTorrent binds to **TCP/8000** and rTorrent to **TCP/50000** within the container. All other settings - with a few exceptions (see below) - should be according to default templates and project recommendations.
 
-On the first run, all configuration files will be copied from the container the host machine via the shared bind mount. In order to change (any) configuration, simply edit the files that were created in `seedpod-data/conf` and restart the container. The SSL certificate and RSA key used by Nginx can be found in `seedpod-data/ssl`. Existing/changed files on the host machine will NOT be overwritten by the container.
+On the first run, all configuration files will be copied from the container to the host machine via the shared bind mount. In order to change (any) configuration, simply edit the files that were created in `seedpod-data/conf` and restart the container. The SSL certificate and RSA key used by Nginx can be found in `seedpod-data/ssl`. Existing/changed files on the host machine will NOT be overwritten by the container.
 
 ### Configuration file overview
 Overview of the configuration files:
@@ -72,13 +72,13 @@ I prefer keeping configuration secure-*ish* by default. Here's some settings you
  - `protocol.encryption.set` and `system.umask.set` in `rtorrent.rc`
 
 ## Software stack
- - Debian (Testing)
- - Supervisord
- - Nginx
- - PHP-FPM
- - rTorrent
- - ruTorrent
- - Irssi
- - autodl-irssi
- - autodl-rutorrent
+ - [Debian](https://www.debian.org/) (Testing)
+ - [Supervisord](http://supervisord.org/)
+ - [Nginx](https://www.nginx.com/)
+ - [PHP-FPM](https://www.php.net/)
+ - [rTorrent](https://rakshasa.github.io/rtorrent/)
+ - [ruTorrent](https://github.com/Novik/ruTorrent)
+ - [Irssi](https://irssi.org/)
+ - [autodl-irssi](https://github.com/autodl-community/autodl-irssi)
+ - [autodl-rutorrent](https://github.com/autodl-community/autodl-rutorrent)
  - Some tools (like curl, screen, etc) and a single shell script.

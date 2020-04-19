@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This scripts copies default resources within the container to the host machine
+# This script copies default resources within the container to the host machine
 # and runs supervisord. Some symlinks are created simply for convenience.
 
 set -e

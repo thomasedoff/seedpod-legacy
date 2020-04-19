@@ -1,8 +1,9 @@
 # seedpod Dockerfile
+# https://github.com/thomasedoff/seedpod/
 
 # docker build --rm -t seedpod .
-# mkdir /home/thomas/seedpod-data
-# docker run -it --rm -p8000:8000 -p50000:50000 --mount type=bind,source=/home/thomas/seedpod-data,target=/home/seedpod seedpod
+# mkdir ${HOME}/seedpod-data
+# docker run -it --rm -p8000:8000 -p50000:50000 --mount type=bind,source=${HOME}/seedpod-data,target=/home/seedpod seedpod
 
 FROM debian:testing-slim
 ENV DEBIAN_FRONTEND noninteractive
