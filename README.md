@@ -44,7 +44,7 @@ A pseudo-random password will be generated and output to the terminal. Use it to
 For example: **https://localhost:8000/rutorrent/**
 
 ## Configuration
-By default, Nginx/ruTorrent binds to **TCP/8000** and rTorrent to **TCP/50000** within the container. All other settings - with a few exceptions (see below) - should be according to default templates and project recommendations.
+By default, Nginx/ruTorrent binds to **8000/tcp** and rTorrent to **50000/tcp** within the container. All other settings - with a few exceptions (see below) - should be according to default templates and project recommendations.
 
 On the first run, all configuration files will be copied from the container to the host machine via the shared bind mount. In order to change (any) configuration, simply edit the files that were created in `seedpod-data/conf` and restart the container. The SSL certificate and RSA key used by Nginx can be found in `seedpod-data/ssl`. Existing/changed files on the host machine will NOT be overwritten by the container.
 
@@ -82,3 +82,10 @@ I prefer keeping configuration secure-*ish* by default. Here's some settings you
  - [autodl-irssi](https://github.com/autodl-community/autodl-irssi)
  - [autodl-rutorrent](https://github.com/autodl-community/autodl-rutorrent)
  - Some tools (like curl, screen, etc) and a single shell script.
+
+## Future plans
+ - Make sure everything actually works! :)
+ - prerequisite section?
+ - Generate htpasswd-oneliner in README?
+ - Dockerfile LABEL? HEALTHCHECK?
+ - Docker restart-policy?

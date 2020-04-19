@@ -71,4 +71,5 @@ COPY --chown=seedpod:seedpod init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/init.sh
 
 USER seedpod
+EXPOSE 8000/tcp 50000/tcp
 ENTRYPOINT ["/usr/local/bin/init.sh"]
