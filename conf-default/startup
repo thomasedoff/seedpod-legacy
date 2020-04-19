@@ -1,0 +1,4 @@
+# irssi config
+# https://irssi.org/documentation/faq/#q-how-do-i-execute-commands-automatically-at-startup
+
+# Not used - autodl-irssi is loaded via ~.irssi/scripts/autorun
