@@ -27,7 +27,7 @@ docker build --rm -t seedpod .
 
 Create source bind mount directory (this is where all configuration and your data will be stored):
 ```bash
-mkdir /home/thomas/seedpod-data
+mkdir ${HOME}/seedpod-data
 ```
 
 Run Docker container (with example bind mount source path, Nginx- and rTorrent host machine ports):
@@ -35,11 +35,11 @@ Run Docker container (with example bind mount source path, Nginx- and rTorrent h
 docker run -it --rm \
   -p8000:8000 \
   -p50000:50000 \
-  --mount type=bind,source=/home/thomas/seedpod-data,target=/home/seedpod \
+  --mount type=bind,source=${HOME}/seedpod-data,target=/home/seedpod \
   seedpod
 ```
 
-A pseudo-random password will be generated and output to the terminal. Use it to authenticate to ruTorrent. Finally, visit ruTorrent (on whatever IP and TCP port you exposed for Nginx on the host machine). 
+A pseudo-random password will be generated and output to the terminal. Use it to authenticate to ruTorrent. Finally, visit ruTorrent (on whatever TCP port you exposed for Nginx on the host machine). 
 
 For example: **https://localhost:8000/rutorrent/**
 
