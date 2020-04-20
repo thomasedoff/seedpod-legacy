@@ -7,10 +7,10 @@ set -e
 
 generateweakhtpasswd() {
   # Generate a plain-text password entry for htpasswd
-  PLAIN=$(openssl rand -base64 6)
-  echo "seedpod:{PLAIN}${PLAIN}:auto-generated" >> ~/conf/htpasswd
+  PASSWORD=$(openssl rand -base64 6)
+  echo "seedpod:{PLAIN}${PASSWORD}:auto-generated" >> ~/conf/htpasswd
   echo -e " * Generating ruTorrent authentication details ...\n"
-  echo -e "   Username: seedpod\n   Password: ${PLAIN}\n" > /proc/self/fd/1
+  echo -e "   Username: seedpod\n   Password: ${PASSWORD}\n" > /proc/self/fd/1
 }
 
 generatesslcert() {
@@ -24,11 +24,11 @@ generatesslcert() {
 
 # Generate necessary directories, files and symlinks for ...
 echo " * Making sure are necessary directores and files exist and are writeable ..."
-[[ -w ~ ]] || { echo " * Could not write to ${HOME}, check the permissions of the source bind mount directory!"; exit 1; }
+[[ -w ~ ]] || { echo " * Can not write to ${HOME}, check permissions of the source bind mount directory!"; exit 1; }
 
 # everything
 mkdir -p ~/{conf,ssl,.autodl}
-mkdir -p ~/rtorrent/{download/{movies,tv,other},log,.session,watch/{movies,tv,other}}
+mkdir -p ~/rtorrent/{{watch,download}/{movies,tv,other},log,.session}
 mkdir -p ~/rutorrent/{settings,torrents,users}
 mkdir -p ~/.irssi/scripts/{autorun,AutodlIrssi}
 

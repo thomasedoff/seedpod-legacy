@@ -16,25 +16,24 @@ Some notable differences to similar projects (for better or worse) may be:
 ## Instructions
 Clone Github repository:
 ```bash
-git clone https://github.com/thomasedoff/seedpod.git
+git clone https://github.com/thomasedoff/seedpod.git ~/seedpod.git
 ```
 
 Build Docker image from Dockerfile:
 ```bash
-cd ./seedpod
+cd ~/seedpod.git
 docker build --rm -t seedpod .
 ```` 
 
 Create source bind mount directory (this is where all configuration and your data will be stored):
 ```bash
-mkdir ${HOME}/seedpod-data
+mkdir ~/seedpod-data
 ```
 
 Run Docker container (with example bind mount source path, Nginx- and rTorrent host machine ports):
 ```bash
 docker run -it --rm \
-  -p8000:8000 \
-  -p50000:50000 \
+  -p8000:8000 -p50000:50000 \
   --mount type=bind,source=${HOME}/seedpod-data,target=/home/seedpod \
   seedpod
 ```
@@ -89,3 +88,6 @@ I prefer keeping configuration secure-*ish* by default. Here's some settings you
  - Generate htpasswd-oneliner in README?
  - Dockerfile LABEL? HEALTHCHECK?
  - Docker restart-policy?
+ - useradd -u, Docker USER and --user?
+ - VPN/Wireguard?
+ - Other self-hosted options (Ansible, .vdi)?

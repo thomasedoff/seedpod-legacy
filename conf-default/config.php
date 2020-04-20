@@ -13,7 +13,7 @@
 
   $httpIP = null;
   $schedule_rand = 10;
-  $do_diagnostic = true;
+  $do_diagnostic = false;
   $log_file = '/proc/self/fd/1';
   $saveUploadedTorrents = false;
   $overwriteUploadedTorrents = false;
