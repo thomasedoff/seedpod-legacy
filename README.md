@@ -1,7 +1,7 @@
 # seedpod
 [seedpod](https://github.com/thomasedoff/seedpod) "Dockerizes" rTorrent, ruTorrent, Irssi, autodl-irssi and autodl-rutorrent to provide the typical functionality of a seedbox.
 
-![seedpod](https://user-images.githubusercontent.com/51061686/79761299-85ca2b80-8321-11ea-97cb-90d735583b74.png)
+![seedpod](https://user-images.githubusercontent.com/51061686/79765115-80231480-8326-11ea-9e67-9c3b5c42a2fd.png)
 
 ## Introduction
 I needed a "seedbox-like" setup for a private project but as the setup grew I decided to migrate everyting to it's own repository and make it public. My ambition is to keep it as minimal and functional as possible.
